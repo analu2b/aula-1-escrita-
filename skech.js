@@ -1,26 +1,31 @@
+let cor;
+let posicaoHorizontal;
+let posicaoVertical;
 
-  function setup() {
-  createCanvas(400, 400);
-}
+function setup() {
+   createCanvas(400, 400);
+ background(220)
+  cor=color(random(0,585),random(0,345),random(0,210));
+  x=200;
+  y=200;
 
+}                    
 function draw() {
-  background("pink");
-  fill("black");
-  textSize(64);
-  textAlign(CENTER, CENTER)
   
-  let maximo = width;
-  let minimo = 0;
-  let palavra = "felicidade";
-  let quantidade = map(mouseX, 0, width, 1, palavra.length);
-  let parcial = palavra.substring(0,quantidade);
-  text(parcial,200,200);
-  
-//  if(mouseX < 50){
-//    let palavra = "C";
-//    text(palavra, 200, 200);
-//  } else {
-//    let palavra = "Caminhante";
-//    text(palavra, 200, 200);
-//  }
+  fill(cor)
+circle(x,y , 50);
+  if(mouseX< x){
+    x = x-1;
 }
+if(mouseX>x){
+  x=x+1
+}  
+if (mouseY< y){
+  y--;
+  }
+  if(mouseY>y){
+    y++;
+  }
+cor=color(random(0,585),random(0,345),random(0,210),random(0,100));
+}
+  
